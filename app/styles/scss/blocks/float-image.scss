@@ -1,0 +1,46 @@
+.parallax{
+
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+
+
+}
+
+.parallax{
+
+  .parallax__floater {
+
+    position: absolute;
+
+    &.parallax__floater--danny {
+      width: 15%;
+      height: auto;
+      left: 70% !important;
+      top: 40% !important;
+      z-index: 10;
+    }
+
+    &.parallax__floater--background {
+      width: 60%;
+      //height: auto;
+      height: 80%;
+      left: 36% !important;
+      top: 5% !important;
+      z-index: 3;
+      background-color: black;
+    }
+
+    &.parallax__floater--main-title{
+      color: white;
+      mix-blend-mode: difference;
+      left: 10% !important;
+      top: 25% !important;
+      font-size: 72px;
+      z-index: 3;
+    }
+
+  }
+
+}

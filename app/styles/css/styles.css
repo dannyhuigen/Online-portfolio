@@ -2,6 +2,35 @@
   margin: 0;
   padding: 0; }
 
+.parallax {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: white; }
+
+.parallax .parallax__floater {
+  position: absolute; }
+  .parallax .parallax__floater.parallax__floater--danny {
+    width: 15%;
+    height: auto;
+    left: 70% !important;
+    top: 40% !important;
+    z-index: 10; }
+  .parallax .parallax__floater.parallax__floater--background {
+    width: 60%;
+    height: 80%;
+    left: 36% !important;
+    top: 5% !important;
+    z-index: 3;
+    background-color: black; }
+  .parallax .parallax__floater.parallax__floater--main-title {
+    color: white;
+    mix-blend-mode: difference;
+    left: 10% !important;
+    top: 25% !important;
+    font-size: 72px;
+    z-index: 3; }
+
 .fs-wrapper {
   width: 100vw;
   height: 100vh;
@@ -17,7 +46,8 @@
 .fs-wrapper .fs-wrapper__inner-wrapper {
   width: calc(100% - 100px);
   height: calc(100% - 100px);
-  background-color: white; }
+  background-color: white;
+  position: relative; }
 
 @keyframes move-background {
   0% {
