@@ -1,0 +1,22 @@
+//-----SCSS fonts-----
+
+
+
+//-----SCSS font families-----
+@font-face {
+  font-family: primary_font;
+  src: url(../../fonts/coolvetica.ttf);
+}
+
+
+
+//-----SCSS font sizes-----
+.fs-70{
+  font-size: 72px;
+  letter-spacing: 2px;
+}
+
+.fs-40{
+  font-size: 38px;
+  letter-spacing: 2px;
+}

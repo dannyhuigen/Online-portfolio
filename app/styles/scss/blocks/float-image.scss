@@ -1,3 +1,15 @@
+//------SCSS float-image-----
+
+
+//-----vars-----
+
+$background-color-1: white;
+$background-color-2: black;
+
+//-----Styles-----
+
+//-----single block styles-----
+
 .parallax{
 
   position: relative;
@@ -8,6 +20,8 @@
 
 }
 
+//-----nested block styles-----
+
 .parallax{
 
   .parallax__floater {
@@ -17,19 +31,44 @@
     &.parallax__floater--danny {
       width: 15%;
       height: auto;
-      left: 70% !important;
+      left: 67% !important;
       top: 40% !important;
       z-index: 10;
+      pointer-events: none;
     }
 
     &.parallax__floater--background {
       width: 60%;
-      //height: auto;
       height: 80%;
       left: 36% !important;
       top: 5% !important;
       z-index: 3;
       background-color: black;
+      transform: rotateZ(5deg) !important;
+    }
+
+    &.parallax__floater--primary-clicker{
+      width: 300px;
+      height: 100px;
+      display: flex !important;
+      align-items: center;
+      justify-content: center;
+      left: 78% !important;
+      top: 47% !important;
+      z-index: 9;
+      //mix-blend-mode: difference;
+      background-color: white;
+
+
+      &:hover{
+        background-size: 200px 200px;
+        background-repeat: repeat;
+        animation: move-background-lt 3s linear 0s infinite;
+        transition: all;
+        overflow: hidden;
+        background-position: 0 0;
+        clip-path: inset(20px 20px 20px 20px);
+      }
     }
 
     &.parallax__floater--main-title{
@@ -37,10 +76,15 @@
       mix-blend-mode: difference;
       left: 10% !important;
       top: 25% !important;
-      font-size: 72px;
       z-index: 3;
     }
 
+    &.parallax__floater--sub-title{
+      color: white;
+      mix-blend-mode: difference;
+      left: calc(10% + 50px) !important;
+      top: calc(25% + 100px) !important;
+      z-index: 3;
+    }
   }
-
 }

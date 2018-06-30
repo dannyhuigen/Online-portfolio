@@ -1,7 +1,3 @@
-* {
-  margin: 0;
-  padding: 0; }
-
 .parallax {
   position: relative;
   width: 100%;
@@ -13,44 +9,157 @@
   .parallax .parallax__floater.parallax__floater--danny {
     width: 15%;
     height: auto;
-    left: 70% !important;
+    left: 67% !important;
     top: 40% !important;
-    z-index: 10; }
+    z-index: 10;
+    pointer-events: none; }
   .parallax .parallax__floater.parallax__floater--background {
     width: 60%;
     height: 80%;
     left: 36% !important;
     top: 5% !important;
     z-index: 3;
-    background-color: black; }
+    background-color: black;
+    transform: rotateZ(5deg) !important; }
+  .parallax .parallax__floater.parallax__floater--primary-clicker {
+    width: 300px;
+    height: 100px;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    left: 78% !important;
+    top: 47% !important;
+    z-index: 9;
+    background-color: white; }
+    .parallax .parallax__floater.parallax__floater--primary-clicker:hover {
+      background-size: 200px 200px;
+      background-repeat: repeat;
+      animation: move-background-lt 3s linear 0s infinite;
+      transition: all;
+      overflow: hidden;
+      background-position: 0 0;
+      clip-path: inset(20px 20px 20px 20px); }
   .parallax .parallax__floater.parallax__floater--main-title {
     color: white;
     mix-blend-mode: difference;
     left: 10% !important;
     top: 25% !important;
-    font-size: 72px;
+    z-index: 3; }
+  .parallax .parallax__floater.parallax__floater--sub-title {
+    color: white;
+    mix-blend-mode: difference;
+    left: calc(10% + 50px) !important;
+    top: calc(25% + 100px) !important;
     z-index: 3; }
 
+#parallax {
+  pointer-events: auto !important; }
+
 .fs-wrapper {
+  position: relative;
   width: 100vw;
   height: 100vh;
   display: flex;
   align-items: center;
-  justify-content: center;
-  background-image: linear-gradient(45deg, white 25%, black 25%, black 50%, white 50%, white 75%, black 75%, black 100%);
-  background-size: 200px 200px;
-  background-repeat: repeat;
-  animation: move-background 3s linear 0s infinite;
-  transition: all; }
+  justify-content: center; }
 
 .fs-wrapper .fs-wrapper__inner-wrapper {
-  width: calc(100% - 100px);
-  height: calc(100% - 100px);
+  width: calc(100% - 50px);
+  height: calc(100% - 50px);
   background-color: white;
   position: relative; }
 
-@keyframes move-background {
+.fs-wrapper .fs-wrapper__bg-lt {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 50%;
+  background-image: linear-gradient(135deg, white 25%, black 25%, black 50%, white 50%, white 75%, black 75%, black 100%);
+  background-size: 200px 200px;
+  background-repeat: repeat;
+  animation: move-background-lt 3s linear 0s infinite;
+  transition: all;
+  overflow: hidden;
+  background-position: 0 0; }
+
+.fs-wrapper .fs-wrapper__bg-rt {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 50%;
+  background-image: linear-gradient(45deg, white 25%, black 25%, black 50%, white 50%, white 75%, black 75%, black 100%);
+  background-size: 200px 200px;
+  background-repeat: repeat;
+  animation: move-background-rt 3s linear 0s infinite;
+  transition: all;
+  overflow: hidden;
+  background-position: bottom right; }
+
+.fs-wrapper .fs-wrapper__bg-rb {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 50%;
+  height: 50%;
+  background-image: linear-gradient(135deg, white 25%, black 25%, black 50%, white 50%, white 75%, black 75%, black 100%);
+  background-size: 200px 200px;
+  background-repeat: repeat;
+  animation: move-background-rb 3s linear 0s infinite;
+  transition: all;
+  overflow: hidden; }
+
+.fs-wrapper .fs-wrapper__bg-lb {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50%;
+  height: 50%;
+  background-image: linear-gradient(45deg, white 25%, black 25%, black 50%, white 50%, white 75%, black 75%, black 100%);
+  background-size: 200px 200px;
+  background-repeat: repeat;
+  animation: move-background-lb 3s linear 0s infinite;
+  transition: all;
+  overflow: hidden; }
+
+@keyframes move-background-lt {
   0% {
-    background-position: 0; }
+    background-position: 100% 100%; }
   100% {
-    background-position: 200px; } }
+    background-position: calc(100% - 200px) 100%; } }
+
+@keyframes move-background-rt {
+  0% {
+    background-position: 100px 100%; }
+  100% {
+    background-position: 300px 100%; } }
+
+@keyframes move-background-lb {
+  0% {
+    background-position: 100% 0; }
+  100% {
+    background-position: calc(100% - 200px) 0; } }
+
+@keyframes move-background-rb {
+  0% {
+    background-position: 100px 0; }
+  100% {
+    background-position: 300px 0; } }
+
+@font-face {
+  font-family: primary_font;
+  src: url(../../fonts/coolvetica.ttf); }
+
+.fs-70 {
+  font-size: 72px;
+  letter-spacing: 2px; }
+
+.fs-40 {
+  font-size: 38px;
+  letter-spacing: 2px; }
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: primary_font; }
