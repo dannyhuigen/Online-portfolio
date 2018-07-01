@@ -1,0 +1,38 @@
+//-----SCSS fullscreen wrapper-----
+
+
+//-----vars-----:
+
+
+
+//-----Styles-----
+
+
+//-----single block styles-----
+
+.page_switch{
+
+}
+
+//-----nested block styles-----
+
+.js-page_switch{
+
+  transition: all 1.5s linear;
+
+  &.js-page_switch--active{
+    display: flex;
+    transform: rotateY(0deg);
+  }
+
+  &.js-page_switch--passive{
+    transform: rotateY(90deg);
+  }
+
+  &.js-page_switch--hidden{
+    display: none;
+  }
+
+}
+
+//-----animations-----

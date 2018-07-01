@@ -1,3 +1,60 @@
+@font-face {
+  font-family: primary_font;
+  src: url(../../fonts/coolvetica.ttf); }
+
+.fs-70 {
+  font-size: 72px;
+  letter-spacing: 2px; }
+
+.fs-40 {
+  font-size: 38px;
+  letter-spacing: 2px; }
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: primary_font; }
+
+.btn-1 {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  width: 300px;
+  height: 100px;
+  cursor: pointer;
+  background-size: 200px 200px;
+  background-repeat: repeat;
+  animation: move-background 3s linear 0s infinite;
+  background-image: linear-gradient(45deg, white 25%, black 25%, black 50%, white 50%, white 75%, black 75%, black 100%);
+  overflow: hidden; }
+
+.btn-1 .btn-1__text-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  pointer-events: none;
+  overflow: hidden;
+  transition: all .4s; }
+
+.btn-1:hover .btn-1__text-wrapper {
+  overflow: hidden;
+  width: calc(100% - 20px);
+  height: calc(100% - 20px);
+  background-color: black;
+  color: white; }
+
+.btn-1.btn-1--mix-blend {
+  mix-blend-mode: difference; }
+
+@keyframes move-background {
+  0% {
+    background-position: 100% 100%; }
+  100% {
+    background-position: calc(100% - 200px) 100%; } }
+
 .parallax {
   position: relative;
   width: 100%;
@@ -6,13 +63,34 @@
 
 .parallax .parallax__floater {
   position: absolute; }
+  .parallax .parallax__floater.parallax__floater--main-title {
+    color: white;
+    mix-blend-mode: difference;
+    left: 10% !important;
+    top: 20% !important;
+    z-index: 5; }
+  .parallax .parallax__floater.parallax__floater--sub-title {
+    color: white;
+    mix-blend-mode: difference;
+    left: calc(10% + 50px) !important;
+    top: calc(20% + 100px) !important;
+    z-index: 5; }
+  .parallax .parallax__floater.parallax__floater--contact {
+    left: 35% !important;
+    top: 39% !important;
+    z-index: 9;
+    transform: rotateZ(5deg); }
   .parallax .parallax__floater.parallax__floater--danny {
     width: 15%;
     height: auto;
     left: 67% !important;
-    top: 40% !important;
+    top: 51% !important;
     z-index: 10;
     pointer-events: none; }
+  .parallax .parallax__floater.parallax__floater--github {
+    left: 78% !important;
+    top: 58% !important;
+    z-index: 9; }
   .parallax .parallax__floater.parallax__floater--background {
     width: 60%;
     height: 80%;
@@ -21,36 +99,14 @@
     z-index: 3;
     background-color: black;
     transform: rotateZ(5deg) !important; }
-  .parallax .parallax__floater.parallax__floater--primary-clicker {
-    width: 300px;
-    height: 100px;
-    display: flex !important;
-    align-items: center;
-    justify-content: center;
-    left: 78% !important;
-    top: 47% !important;
-    z-index: 9;
-    background-color: white; }
-    .parallax .parallax__floater.parallax__floater--primary-clicker:hover {
-      background-size: 200px 200px;
-      background-repeat: repeat;
-      animation: move-background-lt 3s linear 0s infinite;
-      transition: all;
-      overflow: hidden;
-      background-position: 0 0;
-      clip-path: inset(20px 20px 20px 20px); }
-  .parallax .parallax__floater.parallax__floater--main-title {
-    color: white;
-    mix-blend-mode: difference;
-    left: 10% !important;
-    top: 25% !important;
-    z-index: 3; }
-  .parallax .parallax__floater.parallax__floater--sub-title {
-    color: white;
-    mix-blend-mode: difference;
-    left: calc(10% + 50px) !important;
-    top: calc(25% + 100px) !important;
-    z-index: 3; }
+  .parallax .parallax__floater.parallax__floater--background-hider {
+    width: 100%;
+    height: 200px;
+    left: 25% !important;
+    top: 84% !important;
+    z-index: 13;
+    background-color: white;
+    transform: rotateZ(5deg) !important; }
 
 #parallax {
   pointer-events: auto !important; }
@@ -61,13 +117,15 @@
   height: 100vh;
   display: flex;
   align-items: center;
-  justify-content: center; }
+  justify-content: center;
+  overflow: hidden; }
 
 .fs-wrapper .fs-wrapper__inner-wrapper {
   width: calc(100% - 50px);
   height: calc(100% - 50px);
   background-color: white;
-  position: relative; }
+  position: relative;
+  overflow: hidden; }
 
 .fs-wrapper .fs-wrapper__bg-lt {
   position: absolute;
@@ -147,19 +205,12 @@
   100% {
     background-position: 300px 0; } }
 
-@font-face {
-  font-family: primary_font;
-  src: url(../../fonts/coolvetica.ttf); }
-
-.fs-70 {
-  font-size: 72px;
-  letter-spacing: 2px; }
-
-.fs-40 {
-  font-size: 38px;
-  letter-spacing: 2px; }
-
-* {
-  margin: 0;
-  padding: 0;
-  font-family: primary_font; }
+.js-page_switch {
+  transition: all 1.5s linear; }
+  .js-page_switch.js-page_switch--active {
+    display: flex;
+    transform: rotateY(0deg); }
+  .js-page_switch.js-page_switch--passive {
+    transform: rotateY(90deg); }
+  .js-page_switch.js-page_switch--hidden {
+    display: none; }

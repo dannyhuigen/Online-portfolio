@@ -26,6 +26,7 @@ $main-border-size: calc(100% - 50px);
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
 }
 
 //-----nested block styles-----
@@ -37,6 +38,7 @@ $main-border-size: calc(100% - 50px);
     height: $main-border-size;
     background-color: white;
     position: relative;
+    overflow: hidden;
   }
 
   .fs-wrapper__bg-lt{
