@@ -56,8 +56,13 @@ function showNewPage(pageName) {
 }
 
 function makeNewPageActive(pageName) {
-    var targetPageElement = $(".js-page_switch[data-page='"+pageName+"']");
-    targetPageElement.addClass("js-page_switch--active");
-    targetPageElement.removeClass("js-page_switch--passive");
+
+    setTimeout(function(){
+        var targetPageElement = $(".js-page_switch[data-page='"+pageName+"']");
+        targetPageElement.addClass("js-page_switch--active");
+        targetPageElement.removeClass("js-page_switch--passive");
+    }, 200);
+
+
 }
 
