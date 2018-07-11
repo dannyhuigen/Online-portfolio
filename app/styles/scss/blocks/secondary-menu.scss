@@ -1,0 +1,23 @@
+//------SCSS float-image-----
+
+
+//-----vars-----
+
+//-----Styles-----
+
+//-----single block styles-----
+
+.secondary-menu{
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+}
+
+//-----nested block styles-----
+
+.secondary-menu{
+  li{
+    list-style-type: none;
+    display: inline-block;
+  }
+}

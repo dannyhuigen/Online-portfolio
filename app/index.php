@@ -30,6 +30,20 @@
             <div class="parallax__floater parallax__floater--background"  alt=""></div>
             <div class="parallax__floater parallax__floater--background-hider"  alt=""></div>
         </div>
+
+        <ul class="secondary-menu">
+            <li>
+                <a href="" class="btn-round btn-round--active">
+                    <span class="btn-round__text-popup btn-round__text-popup--active">
+                        Disable animations
+                    </span>
+<!--                    <span class="btn-round__text-popup--deactive">-->
+<!--                        Disable animations-->
+<!--                    </span>-->
+                </a>
+            </li>
+        </ul>
+
     </div>
 
     <div data-page="contact" class="js-page_switch js-page_switch--hidden js-page_switch fs-wrapper__inner-wrapper">
