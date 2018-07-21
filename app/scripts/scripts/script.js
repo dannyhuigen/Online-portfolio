@@ -1,7 +1,20 @@
-var scene = document.getElementById('parallax');
-var parallaxInstance = new Parallax(scene);
 
+var isOpera = (!!window.opr && !!opr.addons) || !!window.opera || navigator.userAgent.indexOf(' OPR/') >= 0;
+var isFirefox = typeof InstallTrigger !== 'undefined';
+var isSafari = /constructor/i.test(window.HTMLElement) || (function (p) { return p.toString() === "[object SafariRemoteNotification]"; })(!window['safari'] || (typeof safari !== 'undefined' && safari.pushNotification));
+var isIE = /*@cc_on!@*/false || !!document.documentMode;
+var isEdge = !isIE && !!window.StyleMedia;
+var isChrome = !!window.chrome && !!window.chrome.webstore;
+var isBlink = (isChrome || isOpera) && !!window.CSS;
 
+if (!isFirefox){
+    var scene = document.getElementById('parallax');
+    var parallaxInstance = new Parallax(scene);
+}
+
+if (isIE || isEdge){
+    $(".fullscreen-message").addClass("fullscreen-message--active");
+}
 
 
 $( document ).ready(function() {
@@ -18,6 +31,22 @@ function initPage(){
 
     });
 
+    $(".js-btn-round").click(function (event) {
+        console.log("click!");
+        event.preventDefault();
+        $(".js-btn-round").toggleClass("btn-round--active");
+        $(".fs-wrapper").toggleClass("fs-wrapper--active");
+    });
+
+    $(".js-contact-btn").click(function () {
+        gotoNewPage("contact");
+    });
+
+    $(".js-main-btn").click(function () {
+        gotoNewPage("main");
+    });
+
+
 }
 
 function gotoNewPage(pageName) {
@@ -26,7 +55,7 @@ function gotoNewPage(pageName) {
     setTimeout(function(){
         showNewPage(pageName);
         makeNewPageActive(pageName);
-    }, 1500);
+    }, 700);
 }
 
 function makePagePassive() {
@@ -41,7 +70,7 @@ function makePagePassive() {
         targetPageElement.each(function () {
             $(this).addClass("js-page_switch--hidden");
         });
-    }, 1500);
+    }, 700);
 
     targetPageElement.each(function () {
         $(this).removeClass("js-page_switch--active");

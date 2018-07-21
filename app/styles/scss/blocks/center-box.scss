@@ -1,0 +1,29 @@
+//-----SCSS fullscreen wrapper-----
+
+
+//-----vars-----:
+
+//-----Styles-----
+
+//-----OverWrite-----
+
+//-----single block styles-----
+
+.center-box {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+//-----nested block styles-----
+
+.centerbox__inner{
+
+}
+
+//-----animations-----
+

@@ -1,0 +1,34 @@
+//------SCSS float-image-----
+
+
+//-----vars-----
+
+//-----Styles-----
+
+//-----single block styles-----
+
+.fullscreen-message{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+//-----nested block styles-----
+
+.fullscreen-message{
+  &.fullscreen-message--active{
+    display: flex;
+  }
+  p{
+    text-align: center;
+    color: white;
+  }
+}

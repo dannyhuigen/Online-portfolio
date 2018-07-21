@@ -28,12 +28,22 @@ $background-color-2: black;
 
     position: absolute;
 
+    //
+    //-----Main page------
+    //
+
     &.parallax__floater--main-title{
       color: white;
       mix-blend-mode: difference;
       left: 10% !important;
       top: 20% !important;
       z-index: 5;
+      @media only screen and (max-width: $screen-m ){
+        left: 0 !important;
+        right: 0 !important;
+        margin: 0 auto;
+        text-align: center;
+      }
     }
 
     &.parallax__floater--sub-title{
@@ -42,13 +52,23 @@ $background-color-2: black;
       left: calc(10% + 50px) !important;
       top: calc(20% + 100px) !important;
       z-index: 5;
+      @media only screen and (max-width: $screen-m ){
+        left: 0 !important;
+        right: 0 !important;
+        margin: 0 auto;
+        text-align: center;
+      }
     }
 
     &.parallax__floater--contact{
       left: 35% !important;
       top: 39% !important;
       z-index: 9;
-      transform: rotateZ(5deg);
+      @media only screen and (max-width: $screen-m ){
+        left: 0 !important;
+        right: 0 !important;
+        margin: 0 auto;
+      }
     }
 
     &.parallax__floater--danny {
@@ -58,12 +78,20 @@ $background-color-2: black;
       top: 51% !important;
       z-index: 10;
       pointer-events: none;
+      @media only screen and (max-width: $screen-m ){
+        display: none !important;
+      }
     }
 
     &.parallax__floater--github{
       left: 78% !important;
       top: 58% !important;
       z-index: 9;
+      @media only screen and (max-width: $screen-m ){
+        left: 0 !important;
+        right: 0 !important;
+        margin: 0 auto;
+      }
     }
 
     &.parallax__floater--background {
@@ -85,5 +113,9 @@ $background-color-2: black;
       background-color: white;
       transform: rotateZ(5deg) !important;
     }
+
+    //
+    //-----Contact page------
+    //
   }
 }

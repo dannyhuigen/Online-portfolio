@@ -42,61 +42,72 @@ $main-border-size: calc(100% - 50px);
   }
 
   .fs-wrapper__bg-lt{
+    background-position: 100% 100%;
+  }
+  .fs-wrapper__bg-rt{
+    background-position: 100px 100%;
+  }
+  .fs-wrapper__bg-rb{
+    background-position: 100% 0;
+  }
+  .fs-wrapper__bg-lb{
+    background-position: 100% 0;
+  }
+
+  &.fs-wrapper--active{
+
+    .fs-wrapper__bg-lt{
+      animation: move-background-lt 3s linear 0s infinite;
+      background-image: linear-gradient(135deg, $background-color-1 25%, $background-color-2 25%, $background-color-2 50%, $background-color-1 50%, $background-color-1 75%, $background-color-2 75%, $background-color-2 100%);
+    }
+    .fs-wrapper__bg-rt{
+      animation: move-background-rt 3s linear 0s infinite;
+      background-image: linear-gradient(45deg, $background-color-1 25%, $background-color-2 25%, $background-color-2 50%, $background-color-1 50%, $background-color-1 75%, $background-color-2 75%, $background-color-2 100%);
+    }
+    .fs-wrapper__bg-rb{
+      animation: move-background-rb 3s linear 0s infinite;
+      background-image: linear-gradient(135deg, $background-color-1 25%, $background-color-2 25%, $background-color-2 50%, $background-color-1 50%, $background-color-1 75%, $background-color-2 75%, $background-color-2 100%);
+
+    }
+    .fs-wrapper__bg-lb{
+      animation: move-background-lb 3s linear 0s infinite;
+      background-image: linear-gradient(45deg, $background-color-1 25%, $background-color-2 25%, $background-color-2 50%, $background-color-1 50%, $background-color-1 75%, $background-color-2 75%, $background-color-2 100%);
+    }
+  }
+
+  .fs-wrapper{
     position: absolute;
-    top: 0;
-    left: 0;
     width: 50%;
     height: 50%;
-    background-image: linear-gradient(135deg, $background-color-1 25%, $background-color-2 25%, $background-color-2 50%, $background-color-1 50%, $background-color-1 75%, $background-color-2 75%, $background-color-2 100%);
     background-size: 200px 200px;
     background-repeat: repeat;
-    animation: move-background-lt 3s linear 0s infinite;
     transition: all;
     overflow: hidden;
+    background-color: black;
+
+  }
+
+
+  .fs-wrapper__bg-lt{
+    top: 0;
+    left: 0;
     background-position: 0 0;
   }
 
   .fs-wrapper__bg-rt{
-    position: absolute;
     top: 0;
     right: 0;
-    width: 50%;
-    height: 50%;
-    background-image: linear-gradient(45deg, $background-color-1 25%, $background-color-2 25%, $background-color-2 50%, $background-color-1 50%, $background-color-1 75%, $background-color-2 75%, $background-color-2 100%);
-    background-size: 200px 200px;
-    background-repeat: repeat;
-    animation: move-background-rt 3s linear 0s infinite;
-    transition: all;
-    overflow: hidden;
     background-position: bottom right;
   }
 
   .fs-wrapper__bg-rb{
-    position: absolute;
     bottom: 0;
     right: 0;
-    width: 50%;
-    height: 50%;
-    background-image: linear-gradient(135deg, $background-color-1 25%, $background-color-2 25%, $background-color-2 50%, $background-color-1 50%, $background-color-1 75%, $background-color-2 75%, $background-color-2 100%);
-    background-size: 200px 200px;
-    background-repeat: repeat;
-    animation: move-background-rb 3s linear 0s infinite;
-    transition: all;
-    overflow: hidden;
   }
 
   .fs-wrapper__bg-lb{
-    position: absolute;
     bottom: 0;
     left: 0;
-    width: 50%;
-    height: 50%;
-    background-image: linear-gradient(45deg, $background-color-1 25%, $background-color-2 25%, $background-color-2 50%, $background-color-1 50%, $background-color-1 75%, $background-color-2 75%, $background-color-2 100%);
-    background-size: 200px 200px;
-    background-repeat: repeat;
-    animation: move-background-lb 3s linear 0s infinite;
-    transition: all;
-    overflow: hidden;
   }
 
 }

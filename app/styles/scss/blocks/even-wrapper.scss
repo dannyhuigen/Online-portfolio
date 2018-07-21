@@ -1,0 +1,36 @@
+//-----SCSS fullscreen wrapper-----
+
+
+//-----vars-----:
+
+//-----Styles-----
+
+
+//-----single block styles-----
+
+.even-wrapper {
+  display: flex;
+}
+
+//-----nested block styles-----
+
+.even-wrapper{
+
+  //-----contact page support-----
+  .btn-2{
+    height: fit-content;
+    align-self: center;
+    margin-left: 100px;
+  }
+
+  @media only screen and (max-width: $screen-m ){
+    flex-direction: column;
+    .btn-2{
+      margin-left: 0;
+    }
+  }
+
+}
+
+//-----animations-----
+

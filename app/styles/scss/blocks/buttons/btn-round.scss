@@ -5,6 +5,8 @@
 
 $background-color-1: white;
 $background-color-2: black;
+$color-active: #367900;
+$color-unactive: #590000;
 
 //-----Styles-----
 
@@ -23,30 +25,140 @@ $background-color-2: black;
 //-----nested block styles-----
 
 .btn-round{
-
+  //Main dot that you can hover over
   .btn-round__text-popup{
-    opacity: 0;
-    visibility: hidden;
+    position: absolute;
+    height: 40px;
+    width: 200px;
+    font-size: 22px;
+    left: 6px;
+    bottom: 5px;
+    z-index: 30;
+    transform: rotate(270deg);
+    transform-origin: 0 0;
+
+    @media only screen and (max-width: $screen-m ){
+      display: none !important;
+    }
+
+    //Text active
+    &.btn-round__text-popup--active{
+      color: $color-unactive;
+    }
+    //Text unactive
+    &.btn-round__text-popup--unactive{
+      color: $color-active;
+    }
+
+    //invisible barrier that hides text
+    &:after{
+      content: "";
+      height: 40px;
+      background-color: white;
+      position: absolute;
+      width: 100%;
+      right: 0;
+      transition: all .5s;
+    }
   }
 
-  &.btn-round--active{
-    &:hover{
-      .btn-round__text-popup--active{
-        opacity: 1;
-        visibility: visible;
-        position: absolute;
-        height: 40px;
-        width: 200px;
-        font-size: 22px;
-        text-align: center;
-        justify-self: center;
-        left: 6px;
-        bottom: -10px;
-        z-index: 30;
-        transform: rotate(270deg);
-        transform-origin: 0 0;
+  //dash trough dot
+  &:after{
+    content: "";
+    position: absolute;
+    background-color: white;
+    transform: rotate(90deg);
+    top: 18px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 0px;
+    height: 4px;
+    transition: all .3s;
+  }
+  //dot inside dot
+  &:before{
+    content: "";
+    position: absolute;
+    background-color: white;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    border-radius: 50%;
+    width: 0;
+    height: 0;
+    transition: all .3s;
+  }
+
+  &:hover{
+    .btn-round__text-popup--unactive{
+      &:after{
+        width: 0;
       }
     }
+    &:after{
+      width: 40px;
+    }
+  }
+}
+
+.btn-round--active{
+
+  //Dash inside dot grow
+  &:after{
+    width: 0px;
+    height: 4px;
+    transform: rotate(0);
+  }
+  //dot inside dot grow
+  &:before{
+    width: 28px;
+    height: 28px;
+    background-color: $color-active;
+  }
+
+  //hover for in inner-dot & dash
+  &:hover{
+    //dot
+    &:after{
+      transform: rotate(45deg);
+    }
+    //dot
+    &:before{
+      width: 12px;
+      height: 12px;
+    }
+  }
+
+  //invisible block shrinks to make text visible
+  &:hover{
+    .btn-round__text-popup--active{
+      &:after{
+        width: 0;
+      }
+    }
+  }
+}
+
+//If button has .btn-round--active class the active text is visible
+//Else the unactive class is visible
+.btn-round{
+  .btn-round__text-popup--active{
+    display: none;
+  }
+  .btn-round__text-popup--unactive{
+    display: block;
+  }
+}
+
+.btn-round--active{
+  .btn-round__text-popup--active{
+    display: block;
+  }
+  .btn-round__text-popup--unactive{
+    display: none;
   }
 }
 
