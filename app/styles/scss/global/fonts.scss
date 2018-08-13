@@ -37,17 +37,17 @@
 .fs-70{
   //font-size: 72px;
   letter-spacing: 2px;
-  @include fluid-type($screen-s , $screen-xl, 37px , 74px);
+  @include fluid-type($screen-s , $screen-xl, 54px , 74px);
 }
 
 .fs-60{
   //font-size: 60px;
   letter-spacing: 2px;
-  @include fluid-type($screen-s , $screen-xl, 31px , 62px);
+  @include fluid-type($screen-s , $screen-xl, 48px , 62px);
 }
 
 .fs-40{
   //font-size: 38px;
   letter-spacing: 2px;
-  @include fluid-type($screen-s , $screen-xl, 20px , 40px);
+  @include fluid-type($screen-s , $screen-xl, 30px , 40px);
 }
