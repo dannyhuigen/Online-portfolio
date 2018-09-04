@@ -9,7 +9,6 @@ gulp.task("watch" , ["sass"] , function () {
 });
 
 
-
 //function to compile all SCSS from SCSS map to CSS stylesheet
 gulp.task("sass" , function () {
     return gulp.src("app/styles/scss/**/*.scss")

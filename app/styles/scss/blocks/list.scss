@@ -1,0 +1,75 @@
+//------SCSS float-image-----
+
+
+//-----vars-----
+
+
+//-----Styles-----
+
+//-----single block styles-----
+
+.list-wrapper{
+
+  width: 500px;
+
+}
+
+//-----nested block styles-----
+
+.list-wrapper{
+
+  .object{
+    width: 100%;
+    min-height: 50px;
+    list-style-type: none;
+    background-color: cadetblue;
+    box-shadow: 0 0 10px 0 rgba(0,0,0,0.3);
+    position: relative;
+
+    ul{
+      margin-left: 50px;
+      min-height: 30px;
+      min-width: 200px;
+      background-color: mediumslateblue;
+      li{
+        background-color: mediumslateblue;
+      }
+    }
+
+    .exit{
+      position: absolute;
+      z-index: 100;
+      width: 20px;
+      height: 20px;
+      top: 5px;
+      display: inline-block;
+      cursor: pointer;
+      right: 5px;
+      color: white;
+      font-size: 20px;
+      content: "x";
+      &:hover{
+        transform: scale(1.1);
+        color: red;
+      }
+    }
+
+    &.selected{
+      background-color: indianred;
+    }
+
+  }
+
+  .dragged {
+    position: absolute;
+    z-index: 2000;
+  }
+
+  .example li.placeholder {
+    position: relative;
+  }
+  .example li.placeholder:before {
+    position: absolute;
+  }
+
+}
