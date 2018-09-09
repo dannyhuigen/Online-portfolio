@@ -14,7 +14,7 @@
     <div data-page="main" class="js-page_switch js-page_switch--active js-page_switch fs-wrapper__inner-wrapper">
         <div id="parallax" class="parallax js-parralex">
             <h1 data-depth="0.6" class="parallax__floater parallax__floater--main-title fs-70">Hi I am Danny Huigen</h1>
-            <h2 data-depth="0.4" class="parallax__floater parallax__floater--sub-title fs-40">A dutch developer in the making</h2>
+            <h2 data-depth="0.4" class="parallax__floater parallax__floater--sub-title fs-40">A Dutch developer in the making</h2>
             <a data-depth="0.2" class="btn-1 btn-1--mix-blend js-contact-btn parallax__floater parallax__floater--contact fs-40"  alt="">
                 <div class="btn-1__text-wrapper">
                     Contact me
