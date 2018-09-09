@@ -6,10 +6,10 @@
 
 <div class="fs-wrapper fs-wrapper--active">
 
-    <div class="fs-wrapper fs-wrapper__bg-lt"></div>
-    <div class="fs-wrapper fs-wrapper__bg-rt"></div>
-    <div class="fs-wrapper fs-wrapper__bg-rb"></div>
-    <div class="fs-wrapper fs-wrapper__bg-lb"></div>
+    <div class="fs-wrapper-looking-box fs-wrapper-looking-box__bg-lt"><div class="fs-wrapper fs-wrapper-inner fs-wrapper__bg-lt"></div></div>
+    <div class="fs-wrapper-looking-box fs-wrapper-looking-box__bg-rt"><div class="fs-wrapper fs-wrapper-inner fs-wrapper__bg-rt"></div></div>
+    <div class="fs-wrapper-looking-box fs-wrapper-looking-box__bg-rb"><div class="fs-wrapper fs-wrapper-inner fs-wrapper__bg-rb"></div></div>
+    <div class="fs-wrapper-looking-box fs-wrapper-looking-box__bg-lb"><div class="fs-wrapper fs-wrapper-inner fs-wrapper__bg-lb"></div></div>
 
     <div data-page="main" class="js-page_switch js-page_switch--active js-page_switch fs-wrapper__inner-wrapper">
         <div id="parallax" class="parallax js-parralex">

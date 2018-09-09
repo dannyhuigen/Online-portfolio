@@ -27,6 +27,7 @@ $main-border-size: calc(100% - 50px);
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  flex-wrap: wrap;
 }
 
 //-----nested block styles-----
@@ -37,118 +38,118 @@ $main-border-size: calc(100% - 50px);
     width: $main-border-size;
     height: $main-border-size;
     background-color: white;
-    position: relative;
+    position: absolute;
     overflow: hidden;
+
   }
 
-  .fs-wrapper__bg-lt{
-    background-position: 100% 100%;
-  }
-  .fs-wrapper__bg-rt{
-    background-position: 100px 100%;
-  }
-  .fs-wrapper__bg-rb{
-    background-position: 100% 0;
-  }
-  .fs-wrapper__bg-lb{
-    background-position: 100% 0;
-  }
 
   &.fs-wrapper--active{
 
     .fs-wrapper__bg-lt{
-      animation: move-background-lt 3s linear 0s infinite;
-      background-image: linear-gradient(135deg, $background-color-1 25%, $background-color-2 25%, $background-color-2 50%, $background-color-1 50%, $background-color-1 75%, $background-color-2 75%, $background-color-2 100%);
-    }
+      }
     .fs-wrapper__bg-rt{
-      animation: move-background-rt 3s linear 0s infinite;
-      background-image: linear-gradient(45deg, $background-color-1 25%, $background-color-2 25%, $background-color-2 50%, $background-color-1 50%, $background-color-1 75%, $background-color-2 75%, $background-color-2 100%);
-    }
+      }
     .fs-wrapper__bg-rb{
-      animation: move-background-rb 3s linear 0s infinite;
-      background-image: linear-gradient(135deg, $background-color-1 25%, $background-color-2 25%, $background-color-2 50%, $background-color-1 50%, $background-color-1 75%, $background-color-2 75%, $background-color-2 100%);
-
-    }
+      }
     .fs-wrapper__bg-lb{
-      animation: move-background-lb 3s linear 0s infinite;
-      background-image: linear-gradient(45deg, $background-color-1 25%, $background-color-2 25%, $background-color-2 50%, $background-color-1 50%, $background-color-1 75%, $background-color-2 75%, $background-color-2 100%);
+     }
+  }
+
+  .fs-wrapper-looking-box__bg-lt{
+    .fs-wrapper__bg-lt{
+      background-image: url("../../images/black-white-lines/1.jpg");
+      background-position: bottom right;
+      animation: move-background-lt 3s infinite linear;
+    }
+  }
+  .fs-wrapper-looking-box__bg-rt{
+    .fs-wrapper__bg-rt{
+      background-image: url("../../images/black-white-lines/2.jpg");
+      background-position: bottom left;
+      animation: move-background-rt 3s infinite linear;
+    }
+  }
+  .fs-wrapper-looking-box__bg-rb{
+    .fs-wrapper__bg-rb{
+      background-image: url("../../images/black-white-lines/4.jpg");
+      background-position: top right;
+      animation: move-background-rb 3s infinite linear;
+    }
+  }
+  .fs-wrapper-looking-box__bg-lb{
+    .fs-wrapper__bg-lb{
+      background-image: url("../../images/black-white-lines/3.jpg");
+      background-position: top left;
+      animation: move-background-lb 3s infinite linear;
     }
   }
 
-  .fs-wrapper{
-    position: absolute;
+  .fs-wrapper-looking-box{
+
+    position: relative;
     width: 50%;
     height: 50%;
-    background-size: 200px 200px;
-    background-repeat: repeat;
-    transition: all;
+    align-items: center;
+    justify-content: center;
     overflow: hidden;
-    background-color: black;
+    display: flex;
+    flex-wrap: wrap;
+    overflow: hidden;
 
   }
 
-
-  .fs-wrapper__bg-lt{
-    top: 0;
-    left: 0;
-    background-position: 0 0;
+  .fs-wrapper-inner{
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    min-width: calc(100% + 400px);
+    min-height: calc(100% + 400px);
   }
-
-  .fs-wrapper__bg-rt{
-    top: 0;
-    right: 0;
-    background-position: bottom right;
-  }
-
-  .fs-wrapper__bg-rb{
-    bottom: 0;
-    right: 0;
-  }
-
-  .fs-wrapper__bg-lb{
-    bottom: 0;
-    left: 0;
-  }
-
 }
 
 //-----animations-----
 
 @keyframes move-background-lt {
   0%{
-    background-position: 100% 100%;
+    transform: translateY(0) translateX(0);
   }
 
   100%{
-    background-position: calc(100% - 200px) 100%
+    transform: translateY(0) translateX(200px);
   }
 }
 
 @keyframes move-background-rt {
   0%{
-    background-position: 100px 100%;
+    transform: translateY(0) translateX(0);
   }
 
   100%{
-    background-position: 300px 100%;
+    transform: translateY(0) translateX(-200px);
   }
 }
 
 @keyframes move-background-lb {
   0%{
-    background-position: 100% 0;
+    transform: translateY(0) translateX(0);
   }
 
   100%{
-    background-position: calc(100% - 200px) 0
+    transform: translateY(0) translateX(-200px);
   }
 }
 
 @keyframes move-background-rb {
+
   0%{
-    background-position: 100px 0;
+    transform: translateY(0) translateX(0);
   }
+
   100%{
-    background-position: 300px 0;
+    transform: translateY(0) translateX(200px);
   }
 }
